@@ -42,7 +42,52 @@ export class ProductService {
       price: 12.99,
       stock: 40,
       imageUrl: 'https://via.placeholder.com/150/F9CA24/FFFFFF?text=Mascara'
-    }
+    },
+    {
+      id: 5,
+      name: 'Aceite Capilar Reparador',
+      description: 'Aceite esencial para reparar cabello dañado',
+      category: 'Cuidado Capilar',
+      price: 28.99,
+      stock: 25,
+      imageUrl: 'https://via.placeholder.com/150/FFEAA7/000000?text=Aceite+Capilar'
+    },
+    {
+      id: 6,
+      name: 'Labial Mate',
+      description: 'Labial de larga duración en tono rojo intenso',
+      category: 'Maquillaje',
+      price: 18.99,
+      stock: 35,
+      imageUrl: 'https://via.placeholder.com/150/E9A0FF/000000?text=Labial+Mate'
+    },
+    {
+      id: 7,
+      name: 'Sérum Antiarrugas',
+      description: 'Sérum rejuvenecedor para piel madura',
+      category: 'Cuidado Facial',
+      price: 55.99,
+      stock: 15,
+      imageUrl: 'https://via.placeholder.com/150/A8E6CF/000000?text=Serum+Facial'
+    },
+    {
+      id: 8,
+      name: 'Jabón Exfoliante',
+      description: 'Jabón corporal con exfoliantes naturales',
+      category: 'Cuidado Corporal',
+      price: 22.99,
+      stock: 45,
+      imageUrl: 'https://via.placeholder.com/150/DCEDC8/000000?text=Jabon+Exfoliante'
+    },
+    {
+      id: 9,
+      name: 'Perfume Citrico',
+      description: 'Fragancia fresca con notas de cítricos y flores',
+      category: 'Fragancias',
+      price: 42.99,
+      stock: 20,
+      imageUrl: 'https://via.placeholder.com/150/FFD1DC/000000?text=Perfume+Citrico'
+    },
   ];
 
   private productsSubject = new BehaviorSubject<Product[]>(this.products);
