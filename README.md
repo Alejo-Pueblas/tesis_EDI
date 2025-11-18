@@ -1,92 +1,159 @@
-# Sistema de Gestión de Ventas por Catálogo - Biggete
+# Catálogo Biggete - Sistema de Gestión de Productos Cosméticos
 
-## Descripción
+Un sistema web completo para gestión de productos cosméticos y de belleza, desarrollado con Angular 18. Incluye tanto un **catálogo público** accesible para revendedores y clientes finales, como un **panel administrativo** para gestionar inventario, clientes y pedidos.
 
-Versión personalizada del sistema de gestión de ventas por catálogo, desarrollada con Angular 18 para la empresa Biggete, especializada en productos cosméticos y de cuidado personal. Este sistema permite la administración de clientes, productos y pedidos sin necesidad de backend real, utilizando datos simulados.
+## 📋 Problemática Resuelta
 
-## Características Principales
+La empresa Biggete, dedicada a la venta de productos cosméticos y de cuidado personal por catálogo, gestionaba manualmente sus procesos de manera ineficiente. Esta aplicación digital automatiza completamente:
 
-### Dashboard con Estadísticas
-- Visualización de total de clientes, productos, pedidos e ingresos
-- Actualización en tiempo real utilizando servicios reactivos
-- Representa una mejora personal agregada al proyecto grupal, proporcionando una visión general del negocio
+- ✅ **Catálogo público** visible para clientes/revendedores
+- ✅ **Búsqueda y filtrado** avanzado de productos
+- ✅ **Gestión administrativa** completa del inventario
+- ✅ **Interfaz intuitiva** y moderna
+- ✅ **Subida de imágenes** para productos
 
-### Gestión de Clientes
-- Agregar nuevos clientes (revendedores y clientes finales)
-- Listado en tabla con opciones de eliminación
-- Datos básicos: nombre, email, teléfono y tipo
+## 🚀 Características Principales
 
-### Catálogo de Productos
-- Lista de productos con categorías de cosméticos
-- Imágenes placeholder para visualización
-- Búsqueda integrada por nombre, descripción o categoría (funcionalidad personalizada)
+### 🛍️ **Catálogo Público**
+- Vista de productos en tarjetas modernas y atractivas
+- Búsqueda en tiempo real por nombre, descripción o categoría
+- Filtros por categoría y rango de precios
+- Indicación de stock y disponibilidad
+- Diseño responsive para móviles y tablets
 
-### Gestión de Pedidos
-- Registro de pedidos con asociación a clientes
-- Cálculo automático de totales
-- Seguimiento de estado de los pedidos
-- Visualización de ingresos totales
+### ⚡ **Panel Administrativo**
+- Gestión completa de productos con formularios validados
+- Administración de clientes
+- Control de pedidos y órdenes
+- Dashboard con estadísticas en tiempo real
+- Subida y gestión de imágenes de productos
 
-### Interfaz Responsiva
-- Diseño moderno con Bootstrap-inspired CSS
-- Navegación intuitiva con enrutamiento
-- Formularios interactivos usando Angular Forms
+### 🎨 **Personalizaciones Implementadas**
+- **Catálogo público** con vista hermosa (no solo administración)
+- **Función de búsqueda avanzada** con múltiples filtros
+- **Subida de imágenes** para productos
+- **Diseño modernizado** con gradientes violetas elegantes
+- **Animaciones y transiciones** suaves
+- **Separación clara** entre vista pública y administración
+- **Layout mejorado** con productos en cuadrícula organizada
+- **Tema visual consistente** sin emojis para mayor elegancia
 
-## Funcionalidad Agregada (Personalización)
+## 🛠️ Tecnologías Utilizadas
 
-Como versión personal del proyecto grupal:
-- **Dashboard Estadístico**: Panel de control con métricas clave de negocio (totales de clientes, productos, pedidos e ingresos).
-- **Búsqueda en Catálogo**: Función de búsqueda en tiempo real para filtrar productos.
-- **Estilos Mejorados**: Tema de colores azul (#007bff) consistente y moderno.
-- **Servicios Reactivos**: Implementación con BehaviorSubject para actualizaciones en vivo de datos.
+- **Framework:** Angular 18
+- **Lenguaje:** TypeScript
+- **Estilos:** CSS3 con diseño responsive
+- **Gestión de Estado:** RxJS/BehaviorSubject
+- **Componentes:** Standalone Components
+- **Ruteo:** Angular Router con Lazy Loading
 
-## Tecnologías Utilizadas
-- **Angular 18** con componentes standalone y prerendering SSR
-- **TypeScript** para tipado fuerte
-- **RxJS** para manejo de observables
-- **CSS3** para estilos responsivos
-- Datos simulados sin backend
+## 📦 Instalación y Uso
 
-## Instalación y Desarrollo
+```bash
+# Clona el repositorio
+git clone [URL_DEL_REPOSITORIO]
+cd biggete-catalog-manager
 
-1. Clona el repositorio
-2. Instala dependencias: `npm install`
-3. Servidor de desarrollo: `ng serve`
-4. Navega a `http://localhost:4200/`
+# Instala dependencias
+npm install
 
-## Construcción
-
-Para producción: `ng build --configuration production`
-
-Los archivos de build estarán en `dist/` listos para despliegue en hosting estático.
-
-## Despliegue en GitHub Pages
-
-1. Construye la aplicación: `ng build --configuration production`
-2. Instala angular-cli-ghpages: `npm install -g angular-cli-ghpages`
-3. Despliega: `ngh --dir dist/biggete-catalog-manager/browser`
-
-## Estructura del Proyecto
-
-```
-src/app/
-├── models/              # Interfaces de datos (Client, Product, Order)
-├── services/            # Servicios para gestión de datos
-├── components/
-│   ├── dashboard/       # Panel estadístico principal
-│   ├── clients-list/    # Gestión de clientes
-│   ├── products-list/   # Catálogo de productos (no implementado completamente en este commit)
-│   └── orders-list/     # Gestión de pedidos (no implementado completamente)
-└── app.routes.ts        # Configuración de rutas
+# Ejecuta el servidor de desarrollo
+npm start
 ```
 
-## Evaluación del Trabajo Final EDI
+La aplicación estará disponible en `http://localhost:4200/`
 
-Este proyecto cumple con los requisitos de:
-- ✗ Organización del código (Angular, componentes, servicios)
-- ✗ Interfaz visual (HTML/CSS responsivo)
-- ✗ Funcionalidad (JS/Angular con bindings, rutas)
-- ✗ Personalización (estadísticas + búsqueda)
-- ✗ Documentación (README, commits claros)
+## 📁 Estructura del Proyecto
 
-Proyecto entregado el 18 de noviembre de 2025.
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── catalog/              # Catálogo público (*Nueva funcionalidad*)
+│   │   │   ├── catalog.component.html
+│   │   │   ├── catalog.component.ts
+│   │   │   └── catalog.component.css
+│   │   ├── products-list/        # Gestión administrativa de productos
+│   │   ├── clients-list/         # Gestión de clientes
+│   │   ├── orders-list/          # Gestión de pedidos
+│   │   └── dashboard/            # Dashboard administrativo
+│   ├── models/                   # Interfaces TypeScript
+│   ├── services/                 # Servicios de datos
+│   ├── app.routes.ts            # Configuración de rutas
+│   ├── app.component.*          # Componente raíz
+│   └── app.config.ts           # Configuración de la app
+```
+
+## 🎯 Funcionalidades Clave
+
+### Catálogo Público
+- **Búsqueda Inteligente:** Busca por nombre, descripción o categoría
+- **Filtros Avanzados:** Por categoría y rangos de precio
+- **Vista de Productos:** Tarjetas modernas con hover effects
+- **Indicadores Visuales:** Stock disponible, precios y categorías
+- **Botones de Acción:** Para solicitar productos (simulado)
+
+### Gestión Administrativa
+- **CRUD Completo:** Crear, Leer, Actualizar, Eliminar productos
+- **Subida de Imágenes:** Soporte para archivos de imagen y URLs
+- **Validación de Formularios:** Campos requeridos y formato válido
+- **Mapas de Datos:** Clientes, productos y pedidos interconectados
+
+## 🔍 Cambios Personales Implementados
+
+Respecto al proyecto grupal base, personalicé con:
+
+1. **🆕 Vista de Catálogo Público** - Catálogo visible para clientes en cuadrícula organizada
+2. **🆕 Función de Búsqueda Avanzada** - Búsqueda en tiempo real con múltiples filtros
+3. **🆕 Subida de Imágenes** - Sistema completo de imágenes para productos
+4. **🎨 Rediseño Visual Completo** - Transición a tema violeta elegante sin emojis
+5. **📱 Layout Mejorado** - Productos organizados en cuadrícula de 3 columnas
+6. **⚡ Animaciones y Efectos** - Hover effects, transiciones suaves
+7. **🔄 Personalización Visual** - Remoción completa de emojis para estética profesional
+8. **📊 Contenido Expandido** - Adición de 5+ productos más para catálogo completo
+
+## 📊 Dashboard Estadístico
+
+El dashboard incluye métricas en tiempo real de:
+- Total de productos
+- Total de clientes
+- Total de pedidos
+- Revenue total
+
+## 🌐 Publicación Web
+
+Este proyecto está preparado para publicación en plataformas de hosting estático como:
+- GitHub Pages
+- Vercel
+- Netlify
+- Cloudflare Pages
+
+Para publicar:
+```bash
+# Build optimizado para producción
+npm run build
+
+# Los archivos se generan en dist/biggete-catalog-manager
+```
+
+## 👨‍💻 Autor
+
+**Trabajo Final Individual - EDI 2024**
+
+- **Institución:** [Nombre de la institución]
+- **Materia:** EDI (Enfoque en Desarrollo Web)
+- **Tecnologías:** HTML, CSS, TypeScript, Angular
+- **Fecha:** Diciembre 2024
+
+## ✨ Características personales destacadas
+- Tema de color violeta profesional
+- Interfaz sin emojis para mayor seriedad
+- Layout responsivo en cuadrícula
+- Catálogo expandido con 10 productos
++ Footer sticky que se adapta al contenido
+- Animaciones suaves
++ Navegación personalizada
+
+---
+
+**Biggete** - Transformando el cuidado personal con tecnología moderna
