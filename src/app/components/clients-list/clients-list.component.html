@@ -1,0 +1,36 @@
+<h1>Gestión de Clientes</h1>
+<div class="add-client">
+  <h3>Agregar Nuevo Cliente</h3>
+  <input [(ngModel)]="newClient.name" placeholder="Nombre del cliente" required>
+  <input [(ngModel)]="newClient.email" type="email" placeholder="Correo electrónico" required>
+  <input [(ngModel)]="newClient.phone" placeholder="Teléfono" required>
+  <select [(ngModel)]="newClient.type">
+    <option value="revendedor">Revendedor</option>
+    <option value="cliente final">Cliente Final</option>
+  </select>
+  <button (click)="addClient()">Agregar Cliente</button>
+</div>
+
+<h2>Lista de Clientes</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Correo Electrónico</th>
+      <th>Teléfono</th>
+      <th>Tipo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{ client.id }}</td>
+      <td>{{ client.name }}</td>
+      <td>{{ client.email }}</td>
+      <td>{{ client.phone }}</td>
+      <td>{{ client.type }}</td>
+      <td><button (click)="deleteClient(client.id)" class="delete-btn">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
