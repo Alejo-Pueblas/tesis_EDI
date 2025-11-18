@@ -1,0 +1,37 @@
+<h1>Gestión de Pedidos</h1>
+<div class="add-order">
+  <h3>Agregar Nuevo Pedido</h3>
+  <input [(ngModel)]="newOrder.clientId" type="number" placeholder="ID del Cliente" required>
+  <input [(ngModel)]="newOrder.total" type="number" placeholder="Total" step="0.01" required>
+  <select [(ngModel)]="newOrder.status">
+    <option value="pending">Pendiente</option>
+    <option value="confirmed">Confirmado</option>
+    <option value="shipped">Enviado</option>
+    <option value="delivered">Entregado</option>
+  </select>
+  <button (click)="addOrder()">Agregar Pedido</button>
+</div>
+
+<h2>Lista de Pedidos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cliente</th>
+      <th>Total</th>
+      <th>Estatus</th>
+      <th>Fecha</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.id }}</td>
+      <td>{{ getClientName(order.clientId) }}</td>
+      <td>${{ order.total | number:'1.2-2' }}</td>
+      <td>{{ order.status }}</td>
+      <td>{{ order.date }}</td>
+      <td><button (click)="deleteOrder(order.id)" class="delete-btn">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>

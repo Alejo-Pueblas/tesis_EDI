@@ -24,13 +24,27 @@ export class ClientsListComponent implements OnInit {
   }
 
   addClient(): void {
-    if (this.newClient.name && this.newClient.email && this.newClient.phone) {
+    if (this.isValidClient()) {
       this.clientService.addClient(this.newClient);
-      this.newClient = { name: '', email: '', phone: '', type: 'revendedor' };
+      this.resetForm();
     }
   }
 
   deleteClient(id: number): void {
-    this.clientService.deleteClient(id);
+    if (confirm('¿Estás seguro de que quieres eliminar este cliente?')) {
+      this.clientService.deleteClient(id);
+    }
+  }
+
+  isValidClient(): boolean {
+    return !!(
+      this.newClient.name.trim() &&
+      this.newClient.email.trim() &&
+      this.newClient.phone.trim()
+    );
+  }
+
+  resetForm(): void {
+    this.newClient = { name: '', email: '', phone: '', type: 'revendedor' };
   }
 }

@@ -14,7 +14,7 @@ export class ProductService {
       category: 'Cuidado Capilar',
       price: 15.99,
       stock: 50,
-      imageUrl: 'https://via.placeholder.com/150/FF6B6B/FFFFFF?text=Shampoo'
+      imageUrl: 'https://www.lacoopeencasa.coop/media/lcec/publico/articulos/7/1/a/71a52d359f39b0a32ac75a3c21f63ffd'
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ export class ProductService {
       category: 'Cuidado Facial',
       price: 25.99,
       stock: 30,
-      imageUrl: 'https://via.placeholder.com/150/4ECDC4/FFFFFF?text=Crema'
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0k6TxibAE-VtokFtVv174wb2Hb0TTQNopVQ&s'
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ export class ProductService {
       category: 'Fragancias',
       price: 45.99,
       stock: 20,
-      imageUrl: 'https://via.placeholder.com/150/45B7D1/FFFFFF?text=Perfume'
+      imageUrl: 'https://juleriaque.vtexassets.com/arquivos/ids/202820/gucci-flora-edp-7EF20E32F935F83EB688B311DBC782DC.jpg?v=638085749014330000'
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ export class ProductService {
       category: 'Maquillaje',
       price: 12.99,
       stock: 40,
-      imageUrl: 'https://via.placeholder.com/150/F9CA24/FFFFFF?text=Mascara'
+      imageUrl: 'https://farmacityar.vtexassets.com/arquivos/ids/253663-800-auto?v=638471593825730000&width=800&height=auto&aspect=true'
     },
     {
       id: 5,
@@ -50,7 +50,7 @@ export class ProductService {
       category: 'Cuidado Capilar',
       price: 28.99,
       stock: 25,
-      imageUrl: 'https://via.placeholder.com/150/FFEAA7/000000?text=Aceite+Capilar'
+      imageUrl: 'https://www.lorealprofessionnel.com.ar/-/media/project/loreal/brand-sites/lp/americas/latam/hair-care/absolut-repair/pdp/instant-resurfacing-10-in-1-perfecting-spray/1-slider.jpg?rev=316f70e50ee54655b66b8de3512240ec&cx=0.53&cy=0.5&cw=1920&ch=1920&hash=8A0913F8BAAA97BB4D9B6B108666C5E7'
     },
     {
       id: 6,
@@ -59,7 +59,7 @@ export class ProductService {
       category: 'Maquillaje',
       price: 18.99,
       stock: 35,
-      imageUrl: 'https://via.placeholder.com/150/E9A0FF/000000?text=Labial+Mate'
+      imageUrl: 'https://d22fxaf9t8d39k.cloudfront.net/173a95d19b4f526f2ced8f65d52438b07ba42f5a02e78c670086c1df52aee7a65253.jpg'
     },
     {
       id: 7,
@@ -68,7 +68,7 @@ export class ProductService {
       category: 'Cuidado Facial',
       price: 55.99,
       stock: 15,
-      imageUrl: 'https://via.placeholder.com/150/A8E6CF/000000?text=Serum+Facial'
+      imageUrl: 'https://d2eebw31vcx88p.cloudfront.net/selmadigital/uploads/b62c93d4adde6795535c7068e601c32a0349ef5d.jpg.webp'
     },
     {
       id: 8,
@@ -77,7 +77,7 @@ export class ProductService {
       category: 'Cuidado Corporal',
       price: 22.99,
       stock: 45,
-      imageUrl: 'https://via.placeholder.com/150/DCEDC8/000000?text=Jabon+Exfoliante'
+      imageUrl: 'https://farmacityar.vtexassets.com/arquivos/ids/203919/126679_jabon-dove-exfoliante-pastilla-individual-x-90-grs_imagen-1.jpg?v=637377678171470000'
     },
     {
       id: 9,
@@ -86,7 +86,7 @@ export class ProductService {
       category: 'Fragancias',
       price: 42.99,
       stock: 20,
-      imageUrl: 'https://via.placeholder.com/150/FFD1DC/000000?text=Perfume+Citrico'
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdCxO0E4wbhRXSxPz8jH1D1ux_KYQfLt-EeQ&s'
     },
   ];
 

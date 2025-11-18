@@ -1,0 +1,86 @@
+<h1>Gestión de Productos</h1>
+<div class="container">
+  <div class="add-product">
+    <h3>Agregar Nuevo Producto</h3>
+    <form class="product-form" (ngSubmit)="addProduct()">
+      <div class="form-group">
+        <label for="name">Nombre del producto *</label>
+        <input [(ngModel)]="newProduct.name" id="name" name="name" placeholder="Nombre del producto" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descripción</label>
+        <textarea [(ngModel)]="newProduct.description" id="description" name="description" placeholder="Descripción del producto"></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="price">Precio *</label>
+          <input [(ngModel)]="newProduct.price" id="price" name="price" type="number" placeholder="0.00" step="0.01" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label for="stock">Stock *</label>
+          <input [(ngModel)]="newProduct.stock" id="stock" name="stock" type="number" placeholder="0" min="0" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="category">Categoría</label>
+          <select [(ngModel)]="newProduct.category" id="category" name="category">
+            <option value="Cuidado Capilar">Cuidado Capilar</option>
+            <option value="Cuidado Facial">Cuidado Facial</option>
+            <option value="Fragancias">Fragancias</option>
+            <option value="Maquillaje">Maquillaje</option>
+            <option value="Cuidado Corporal">Cuidado Corporal</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="image">Imagen del producto</label>
+          <input type="file" #imageInput accept="image/*" (change)="onFileSelected($event)" id="image">
+          <small>Deja vacío para usar URL manual</small>
+        </div>
+      </div>
+
+      <div class="form-group" *ngIf="!selectedFile">
+        <label for="imageUrl">O ingresa URL de imagen</label>
+        <input [(ngModel)]="newProduct.imageUrl" id="imageUrl" name="imageUrl" placeholder="https://ejemplo.com/imagen.jpg">
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="!isValidProduct()">Agregar Producto</button>
+        <button type="button" (click)="resetForm()">Limpiar</button>
+      </div>
+    </form>
+  </div>
+
+<h2>Lista de Productos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Categoría</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Imagen</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.category }}</td>
+      <td>${{ product.price | number:'1.2-2' }}</td>
+      <td>{{ product.stock }}</td>
+      <td><img [src]="product.imageUrl" alt="Imagen" width="50" height="50"></td>
+      <td><button (click)="deleteProduct(product.id)" class="delete-btn">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
