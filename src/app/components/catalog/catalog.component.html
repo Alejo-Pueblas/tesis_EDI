@@ -1,0 +1,106 @@
+<div class="catalog-container">
+  <!-- Header del Catálogo -->
+  <header class="catalog-header">
+    <h1>Catálogo Biggete</h1>
+    <p>Productos de belleza y cuidado personal de alta calidad</p>
+  </header>
+
+  <!-- Barra de Búsqueda y Filtros -->
+  <div class="filters-section">
+    <div class="search-bar">
+      <input
+        type="text"
+        [(ngModel)]="searchText"
+        (input)="applyFilters()"
+        placeholder="Buscar productos..."
+        class="search-input">
+      <button class="search-button">Buscar</button>
+    </div>
+
+    <div class="filters-grid">
+      <div class="filter-group">
+        <label>Categoría:</label>
+        <select [(ngModel)]="selectedCategory" (change)="applyFilters()" class="filter-select">
+          <option value="">Todas las categorías</option>
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Precio:</label>
+        <select [(ngModel)]="selectedPriceRange" (change)="applyFilters()" class="filter-select">
+          <option value="">Todos los precios</option>
+          <option *ngFor="let range of priceRanges" [value]="range.value">{{ range.label }}</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <button (click)="clearFilters()" class="clear-filters-btn">Limpiar Filtros</button>
+      </div>
+    </div>
+
+    <!-- Resultados de búsqueda -->
+    <div class="results-count" *ngIf="filteredProducts.length !== products.length">
+      <span>{{ filteredProducts.length }} de {{ products.length }} productos encontrados</span>
+    </div>
+  </div>
+
+  <!-- Catálogo de Productos -->
+  <main class="products-catalog">
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let product of filteredProducts">
+        <div class="product-image">
+          <img [src]="product.imageUrl" [alt]="product.name" loading="lazy">
+          <div class="product-category" [style.background-color]="getCategoryColor(product.category)">
+            {{ product.category }}
+          </div>
+        </div>
+
+        <div class="product-info">
+          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-description">{{ product.description }}</p>
+
+          <div class="product-details">
+            <div class="price-stock">
+              <span class="product-price">${{ product.price | number:'1.2-2' }}</span>
+              <span class="product-stock" [class.out-of-stock]="product.stock === 0">
+                {{ product.stock > 0 ? 'Stock: ' + product.stock : 'Sin stock' }}
+              </span>
+            </div>
+          </div>
+
+          <button
+            class="order-btn"
+            [disabled]="product.stock === 0"
+            (click)="orderProduct(product)">
+            {{ product.stock > 0 ? 'Solicitar' : 'Agotado' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mensaje cuando no hay productos -->
+    <div class="no-products" *ngIf="filteredProducts.length === 0 && products.length > 0">
+      <div class="no-products-content">
+        <h3>No se encontraron productos</h3>
+        <p>Intenta ajustar tus filtros o búsqueda</p>
+        <button (click)="clearFilters()" class="reset-search-btn">Ver todos los productos</button>
+      </div>
+    </div>
+
+    <!-- Mensaje cuando no hay productos en el sistema -->
+    <div class="no-products" *ngIf="products.length === 0">
+      <div class="no-products-content">
+        <h3>No hay productos disponibles</h3>
+        <p>Los administradores están agregando productos próximamente</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="catalog-footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Biggete - Catálogo de Productos. Contáctanos para pedidos al por mayor.</p>
+    </div>
+  </footer>
+</div>
