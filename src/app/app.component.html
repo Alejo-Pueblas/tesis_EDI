@@ -1,11 +1,15 @@
 <nav class="navbar">
   <div class="nav-container">
-    <h1 class="nav-logo">Sistema Biggete</h1>
+    <a routerLink="/catalog" class="nav-logo">
+      Biggete - Catálogo de Belleza
+    </a>
     <ul class="nav-links">
-      <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
-      <li><a routerLink="/clients" routerLinkActive="active">Clientes</a></li>
-      <li><a routerLink="/products" routerLinkActive="active">Productos</a></li>
-      <li><a routerLink="/orders" routerLinkActive="active">Pedidos</a></li>
+      <li><a routerLink="/catalog" routerLinkActive="active">Catálogo</a></li>
+      <li class="nav-divider">|</li>
+      <li><a routerLink="/admin" routerLinkActive="active">Administración</a></li>
+      <li><a routerLink="/admin/products" routerLinkActive="active">Productos</a></li>
+      <li><a routerLink="/admin/clients" routerLinkActive="active">Clientes</a></li>
+      <li><a routerLink="/admin/orders" routerLinkActive="active">Pedidos</a></li>
     </ul>
   </div>
 </nav>
