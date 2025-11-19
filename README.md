@@ -2,6 +2,12 @@
 
 Un sistema web completo para gestión de productos cosméticos y de belleza, desarrollado con Angular 18. Incluye tanto un **catálogo público** accesible para revendedores y clientes finales, como un **panel administrativo** para gestionar inventario, clientes y pedidos.
 
+## Demo publica:
+https://tesis-edi.onrender.com
+
+## Repositorio:
+https://github.com/Alejo-Pueblas/tesis_EDI.git
+
 ## 📋 Problemática Resuelta
 
 La empresa Biggete, dedicada a la venta de productos cosméticos y de cuidado personal por catálogo, gestionaba manualmente sus procesos de manera ineficiente. Esta aplicación digital automatiza completamente:
