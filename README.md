@@ -144,12 +144,12 @@ npm run build
 
 ## 👨‍💻 Autor
 
-**Trabajo Final Individual - EDI 2024**
+**Trabajo Final Individual - EDI 2025**
 
 - **Institución:** [Nombre de la institución]
 - **Materia:** EDI (Enfoque en Desarrollo Web)
 - **Tecnologías:** HTML, CSS, TypeScript, Angular
-- **Fecha:** Diciembre 2024
+- **Fecha:** Diciembre 2025
 
 ## ✨ Características personales destacadas
 - Tema de color violeta profesional
